@@ -6,16 +6,12 @@ import React from "react";
  * renders block of page buttons
  */
 class Pages extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {selectedPage: this.props.selectedPage}
-    }
     render() {
         let pages = [];
         for(let i=0; i<this.props.pagesCount; i++) {
             let num = i+1;
             pages.push(
-                  <PageButton num={num} key={i} onClick={ (num)=> {this.props.onClick(num); this.setState({selectedPage: i})} } className={this.state.selectedPage == i ? 'selected' : ''} />
+                  <PageButton num={num} key={i} onClick={ (num)=> {this.props.onClick(num); } } className={this.props.selectedPage == i ? 'selected' : ''} />
               );
         }
 
